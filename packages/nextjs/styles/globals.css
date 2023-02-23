@@ -4,10 +4,10 @@
 
 :root,
 [data-theme] {
-  background: hsl(var(--b2));
+  background: hsl(var(--b1));
 }
 
-body {
+html, body {
   min-height: 100vh;
 }
 
@@ -29,4 +29,8 @@ p {
 
 .btn.btn-ghost {
   @apply shadow-none;
+}
+
+#nprogress .spinner .spinner-icon {
+  display: none;
 }

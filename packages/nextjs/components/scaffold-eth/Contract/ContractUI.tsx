@@ -53,13 +53,13 @@ const ContractUI = ({ contractName }: TContractUIProps) => {
     [contract, displayedContractFunctions],
   );
 
-  if (deployedContractLoading) {
-    return (
-      <div className="mt-14">
-        <Spinner width="50px" height="50px" />
-      </div>
-    );
-  }
+  // if (deployedContractLoading) {
+  //   return (
+  //     <div className="mt-14">
+  //       <Spinner width="50px" height="50px" />
+  //     </div>
+  //   );
+  // }
 
   if (!contractAddress) {
     return <p className="text-3xl mt-14">No Contract found!</p>;

@@ -2,115 +2,71 @@
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./utils/**/*.{js,ts,jsx,tsx}"],
   plugins: [require("daisyui")],
-  darkTheme: "scaffoldEthDark",
   // DaisyUI theme colors
   daisyui: {
+    styled: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
     themes: [
       {
-        scaffoldEth: {
-          primary: "#93BBFB",
-          "primary-content": "#212638",
-          secondary: "#DAE8FF",
-          "secondary-content": "#212638",
-          accent: "#93BBFB",
-          "accent-content": "#212638",
-          neutral: "#212638",
-          "neutral-content": "#ffffff",
-          "base-100": "#ffffff",
-          "base-200": "#F9FBFF",
-          "base-300": "#DAE8FF",
-          "base-content": "#212638",
-          info: "#93BBFB",
-          success: "#34EEB6",
-          warning: "#FFCF72",
-          error: "#FF8863",
-
-          "--rounded-btn": "9999rem",
-
-          ".tooltip": {
-            "--tooltip-tail": "6px",
-          },
-        },
-      },
-      {
-        scaffoldEthDark: {
-          primary: "#212638",
-          "primary-content": "#F9FBFF",
-          secondary: "#2A3655",
-          "secondary-content": "#F9FBFF",
-          accent: "#4969A6",
-          "accent-content": "#F9FBFF",
-          neutral: "#F9FBFF",
-          "neutral-content": "#385183",
-          "base-100": "#385183",
-          "base-200": "#2A3655",
-          "base-300": "#212638",
-          "base-content": "#F9FBFF",
-          info: "#385183",
-          success: "#34EEB6",
-          warning: "#FFCF72",
-          error: "#FF8863",
-
-          "--rounded-btn": "9999rem",
-
-          ".tooltip": {
-            "--tooltip-tail": "6px",
-            "--tooltip-color": "hsl(var(--p))",
-          },
-        },
-      },
-      {
-        exampleUi: {
-          primary: "#000000",
-          "primary-content": "#ffffff",
-          secondary: "#FF6644",
-          "secondary-content": "#212638",
-          accent: "#93BBFB",
-          "accent-content": "#212638",
-          neutral: "#f3f3f3",
-          "neutral-content": "#212638",
-          "base-100": "#ffffff",
-          "base-200": "#f1f1f1",
-          "base-300": "#d0d0d0",
-          "base-content": "#212638",
-          info: "#93BBFB",
-          success: "#34EEB6",
-          warning: "#FFCF72",
-          error: "#FF8863",
-
-          "--rounded-btn": "9999rem",
-
-          ".tooltip": {
-            "--tooltip-tail": "6px",
-          },
+        potato: {
+          primary: "#513205",
+          secondary: "#FFD79D",
         },
       },
     ],
   },
   theme: {
-    // Extend Tailwind classes (e.g. font-bai-jamjuree, animate-grow)
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#513205",
+          50: "#EEEBE6",
+          100: "#DCD6CD",
+          200: "#B9AD9B",
+          300: "#978469",
+          400: "#745B37",
+          500: "#513205",
+          600: "#412804",
+          700: "#311E03",
+          800: "#201402",
+          900: "#100A01",
+        },
+        secondary: {
+          DEFAULT: "#FFD79D",
+          50: "#FFFBF5",
+          100: "#FFF7EB",
+          200: "#FFEFD8",
+          300: "#FFE7C4",
+          400: "#FFDFB1",
+          500: "#FFD79D",
+          600: "#CCAC7E",
+          700: "#99815E",
+          800: "#66563F",
+          900: "#332B1F",
+        },
+        success: {
+          DEFAULT: "#6DB5A8",
+        },
+        error: {
+          DEFAULT: "#CC615E",
+        },
+      },
       fontFamily: {
-        "bai-jamjuree": ["Bai Jamjuree", "sans-serif"],
+        signika: ["Signika Negative", "sans-serif"],
       },
-      keyframes: {
-        grow: {
-          "0%": {
-            width: "0%",
-          },
-          "100%": {
-            width: "100%",
-          },
-        },
-        zoom: {
-          "0%, 100%": { transform: "scale(1, 1)" },
-          "50%": { transform: "scale(1.1, 1.1)" },
-        },
+      borderWidth: {
+        1.5: "1.5px",
+        3: "3px",
       },
-      animation: {
-        grow: "grow 5s linear infinite",
-        "pulse-fast": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        zoom: "zoom 1s ease infinite",
+      scale: {
+        "-100": "-1",
+      },
+      width: {
+        76: "307px",
       },
     },
   },

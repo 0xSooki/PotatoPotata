@@ -10,13 +10,12 @@ import { appChains } from "~~/services/web3/wagmiConnectors";
 import { wagmiClient } from "~~/services/web3/wagmiClient";
 import { BlockieAvatar } from "~~/components/scaffold-eth";
 
-import Header from "~~/components/Header";
-import Footer from "~~/components/Footer";
+import Header from "~~/components/shared/Navbar/Header";
 
 import { useEffect } from "react";
 import { useAppStore } from "~~/services/store/store";
 import { useEthPrice } from "~~/hooks/scaffold-eth";
-
+import Web3Provider from "~~/components/Web3Provider";
 import NextNProgress from "nextjs-progressbar";
 
 const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
@@ -31,17 +30,19 @@ const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <WagmiConfig client={wagmiClient}>
-      <NextNProgress />
-      <RainbowKitProvider chains={appChains.chains} avatar={BlockieAvatar}>
+      <NextNProgress color="#513205" />
+      {/*<RainbowKitProvider chains={appChains.chains} avatar={BlockieAvatar}>*/}
+      <Web3Provider>
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="relative flex flex-col flex-1">
             <Component {...pageProps} />
           </main>
-          <Footer />
         </div>
+
         <Toaster />
-      </RainbowKitProvider>
+      </Web3Provider>
+      {/*</RainbowKitProvider>*/}
     </WagmiConfig>
   );
 };
